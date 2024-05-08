@@ -34,15 +34,68 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1. Go to quartus software.
+
+2. Set new environment.
+
+3. Type the code to implement SR flipflop using verilog and validating their functionality using their functional tables.
+
+4. Run the program.
+
+5. Give inputs in the waveform table.
+
+6. Run the program.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+```
+module JK(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;
+	 
+always @ (posedge (clock))
+
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end   
+        
+else
+	begin
+		if(j==0&&k==0)
+			begin
+			q<=q;
+			qb<=qb;
+			end
+		else if(j!=k)
+			begin
+			q<=j;
+			qb<=k;
+			end
+		else if(j==1&&k==1)
+			begin
+			q<=~q;
+			qb<=~qb;
+			end
+	end
+end
+            
+endmodule
+
+```
+
+![Screenshot 2024-04-29 205459](https://github.com/Hashwatha/JKFLIPFLOP-USING-IF-ELSE/assets/150231431/e0a8ae20-1103-4c34-9527-9a782af45ab1)
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![Screenshot 2024-04-29 205611](https://github.com/Hashwatha/JKFLIPFLOP-USING-IF-ELSE/assets/150231431/899dc448-a3e8-4711-bfc0-16f60c6ccd52)
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![Screenshot 2024-04-29 205646](https://github.com/Hashwatha/JKFLIPFLOP-USING-IF-ELSE/assets/150231431/e298e1e9-4320-4159-907a-71c9f09765e2)
+
 **RESULTS**
+
+Implementation of JK flipflop using verilog and validating their functionality using their functional tables is executed and the output is verified successfully.
